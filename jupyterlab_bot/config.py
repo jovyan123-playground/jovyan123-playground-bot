@@ -56,4 +56,4 @@ GITHUB_EVENTS = [
     "team_add",
     "watch",
 ]
-GITHUB_HOOK_URL = "https://jupyterlab-bot.herokuapp.com/hooks/github"
+GITHUB_HOOK_URL = "https://jupyterlab-bot-playground.herokuapp.com/hooks/github"

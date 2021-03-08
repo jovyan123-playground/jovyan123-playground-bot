@@ -1,8 +1,8 @@
 # Jupyterlab Bot Service
 
-This application is freely hosted on [Heroku](https://dashboard.heroku.com/apps/jupyterlab-bot).
+This application is freely hosted on [Heroku](https://dashboard.heroku.com/apps/jupyterlab-bot-playground).
 
-The application can be fount at [this endpoint](https://jupyterlab-bot.herokuapp.com/).
+The application can be fount at [this endpoint](https://jupyterlab-bot-playground.herokuapp.com/).
 
 This application is heavily inspired by [Conda Forge](https://github.com/conda-forge/conda-forge-webservices/).
 
@@ -54,6 +54,7 @@ Log in to Heroku and get Docker credentials:
 
 ```bash
 heroku login
+heroku create jupyterlab-bot-playground
 heroku container:login
 ```
 
