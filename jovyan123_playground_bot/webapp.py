@@ -63,7 +63,6 @@ class GithubHandler(tornado.web.RequestHandler):
         print(json.dumps(body, indent=4, sort_keys=True))
         print("\n\n")
 
-        branch = None
 
         if event_type == "ping":
             self.write("pong")
