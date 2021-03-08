@@ -27,7 +27,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n\
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n\
 SOFTWARE." > BASE_IMAGE_LICENSE
 
-LABEL maintainer="JupyterLab Commiters (@jupyterlab/commiters)"
+LABEL maintainer="jovyan123-playground (@jovyan123-playground)"
 
 ENV LANG en_US.UTF-8
 
@@ -72,9 +72,9 @@ RUN echo "**** install dev packages ****" && \
 
 COPY entrypoint /opt/docker/bin/entrypoint
 RUN chmod +x /opt/docker/bin/entrypoint
-RUN mkdir -p jupyterlab_bot
-COPY / jupyterlab_bot/
-RUN cd jupyterlab_bot && \
+RUN mkdir -p jovyan123_playground_bot
+COPY / jovyan123_playground_bot/
+RUN cd jovyan123_playground_bot && \
     source /opt/conda/etc/profile.d/conda.sh && \
     conda activate base && \
     pip install -e .
@@ -85,5 +85,5 @@ CMD ["/opt/conda/bin/tini", \
      "python", \
      "-u", \
      "-m", \
-     "jupyterlab_bot.webapp" \
+     "jovyan123_playground_bot.webapp" \
     ]

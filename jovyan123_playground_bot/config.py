@@ -18,8 +18,8 @@ GH_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN")
 
 # Bot configuration
 # -----------------
-GITHUB_BOT = "jupyterlab-bot"
-GITHUB_BOT_NAME = "JupyterLab Bot"
+GITHUB_BOT = "jovyan123-playground-bot"
+GITHUB_BOT_NAME = "jovyan123-playground Bot"
 GITHUB_EVENTS = [
     "check_run",
     "check_suite",
@@ -56,4 +56,4 @@ GITHUB_EVENTS = [
     "team_add",
     "watch",
 ]
-GITHUB_HOOK_URL = "https://jupyterlab-bot-playground.herokuapp.com/hooks/github"
+GITHUB_HOOK_URL = "https://jovyan123-playground-bot.herokuapp.com/hooks/github"

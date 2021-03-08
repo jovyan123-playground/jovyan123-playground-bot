@@ -1,8 +1,8 @@
-# Jupyterlab Bot Service
+# jovyan123-playground Bot Service
 
-This application is freely hosted on [Heroku](https://dashboard.heroku.com/apps/jupyterlab-bot-playground).
+This application is freely hosted on [Heroku](https://dashboard.heroku.com/apps/jovyan123-playground-bot).
 
-The application can be fount at [this endpoint](https://jupyterlab-bot-playground.herokuapp.com/).
+The application can be fount at [this endpoint](https://jovyan123-playground-bot.herokuapp.com/).
 
 This application is heavily inspired by [Conda Forge](https://github.com/conda-forge/conda-forge-webservices/).
 
@@ -28,8 +28,8 @@ Install a [webhook](https://docs.github.com/en/developers/webhooks-and-events/cr
 ### Installation
 
 ```bash
-conda create --name jupyterlab-bot python>=3.6 pygithub tornado --channel conda-forge
-conda activate jupyterlab-bot
+conda create --name jovyan123-playground-bot python>=3.6 pygithub tornado --channel conda-forge
+conda activate jovyan123-playground-bot
 pip install -e .
 ```
 
@@ -54,7 +54,7 @@ Log in to Heroku and get Docker credentials:
 
 ```bash
 heroku login
-heroku create jupyterlab-bot-playground
+heroku create jovyan123-playground-bot
 heroku container:login
 ```
 

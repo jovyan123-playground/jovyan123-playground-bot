@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Setup script for JupyterLab Bot."""
+"""Setup script for jovyan123-playground Bot."""
 
 # Standard library imports
 import ast
@@ -12,7 +12,7 @@ from setuptools import find_packages, setup
 HERE = os.path.abspath(os.path.dirname(__file__))
 
 
-def get_version(module='jupyterlab_bot'):
+def get_version(module='jovyan123-playground-bot'):
     """Get version."""
     with open(os.path.join(HERE, module, '__init__.py'), 'r') as f:
         data = f.read()
@@ -36,11 +36,11 @@ def get_description():
 
 
 setup(
-    name='jupyterlab-bot',
+    name='jovyan123-playground-bot',
     version=get_version(),
     keywords=[],
-    url='https://github.com/jupyterlab/jupyterlab-bot',
-    description='jupyterlab-bot.',
+    url='https://github.com/jovyan123-playground/jovyan123-playground-bot',
+    description='jovyan123-playground-bot.',
     long_description=get_description(),
     packages=find_packages(),
     include_package_data=True,

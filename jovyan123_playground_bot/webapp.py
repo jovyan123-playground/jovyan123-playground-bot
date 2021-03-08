@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""JupyterLab Bot."""
+"""jovyan123-playground Bot."""
 
 # Standard library imports
 from urllib.parse import parse_qs
@@ -17,8 +17,8 @@ from tornado import gen
 from tornado.log import enable_pretty_logging
 
 # Local imports
-from jupyterlab_bot.workflows import Workflows
-import jupyterlab_bot.config as config
+from jovyan123_playground_bot.workflows import Workflows
+import jovyan123_playground_bot.config as config
 
 
 # Constants
@@ -27,14 +27,14 @@ HERE = os.path.abspath(os.path.dirname(__file__))
 
 class IndexHandler(tornado.web.RequestHandler):
     def get(self):
-        self.write("<h1>Welcome to the JupyterLab Bot Application!</h1>")
+        self.write("<h1>Welcome to the jovyan123-playground Bot Application!</h1>")
 
 
 class GithubHandler(tornado.web.RequestHandler):
     """Handle Github events."""
 
     def get(self):
-        self.write("<h1>Welcome to the JupyterLab Bot Application - Github hook!</h1>")
+        self.write("<h1>Welcome to the jovyan123-playground Bot Application - Github hook!</h1>")
 
     @gen.coroutine
     def post(self, headers=None, raw_body=None):

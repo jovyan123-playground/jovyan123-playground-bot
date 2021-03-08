@@ -8,10 +8,10 @@ source /opt/conda/etc/profile.d/conda.sh
 conda activate base
 conda info
 
-mkdir -p ${HOME}/.jupyterlab-bot
-echo ${GH_TOKEN} > ${HOME}/.jupyterlab-bot/github.token
+mkdir -p ${HOME}/.jovyan123-playground-bot
+echo ${GH_TOKEN} > ${HOME}/.jovyan123-playground-bot/github.token
 
-git config --global user.name "jupyterlab-bot-playground"
+git config --global user.name "jovyan123-playground-bot"
 git config --global user.email "jovyan123.playground+bot@gmail.com"
 
 echo " "
