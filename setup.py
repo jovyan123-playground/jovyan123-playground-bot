@@ -12,7 +12,7 @@ from setuptools import find_packages, setup
 HERE = os.path.abspath(os.path.dirname(__file__))
 
 
-def get_version(module='jovyan123-playground-bot'):
+def get_version(module='jovyan123_playground_bot'):
     """Get version."""
     with open(os.path.join(HERE, module, '__init__.py'), 'r') as f:
         data = f.read()
@@ -36,7 +36,7 @@ def get_description():
 
 
 setup(
-    name='jovyan123-playground-bot',
+    name='jovyan123_playground_bot',
     version=get_version(),
     keywords=[],
     url='https://github.com/jovyan123-playground/jovyan123-playground-bot',
