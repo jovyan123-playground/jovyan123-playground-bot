@@ -79,7 +79,7 @@ class Workflows:
     def get_workflow_runs(
         self, repo_full_name, workflow_id, branch=None, event=None, status=None
     ):
-        """     
+        """
         List all workflow runs for a workflow.
 
         See: https://developer.github.com/v3/actions/workflow-runs/#list-workflow-runs
@@ -114,26 +114,31 @@ class Workflows:
             f'Cancelling dup builds for "{repo_full_name}" and branch "{head_branch}"'
         )
         workflow_ids = set()
-        workflows = self.get_repo_workflow_runs(
+        workflow_runs = self.get_repo_workflow_runs(
             repo_full_name, branch=head_branch, event="pull_request",
-        )
+        )["workflow_runs"]
+        workflow_runs.extend((self.get_repo_workflow_runs(
+            repo_full_name, branch=head_branch, event="push",
+        ))["workflow_runs"])
+        workflow_types = dict()
 
         status = ["queued", "in_progress"]
-        for workflow_run in workflows["workflow_runs"]:
+        for workflow_run in workflow_runs:
             if workflow_run["status"] in status:
                 workflow_ids.add(workflow_run["workflow_id"])
+                workflow_types[workflow_run["workflow_id"]] = workflow_run["event"]
 
         for workflow_id in workflow_ids:
-            workflow_runs = self.get_workflow_runs(
-                repo_full_name, workflow_id, branch=head_branch, event="pull_request",
+            all_workflow_runs = self.get_workflow_runs(
+                repo_full_name, workflow_id, branch=head_branch, event=workflow_types[workflow_id],
             )
             run_ids = [
                 run["id"]
-                for run in workflow_runs["workflow_runs"]
+                for run in all_workflow_runs["workflow_runs"]
                 if run["status"] in status
             ]
             ids = list(sorted(run_ids))
-            print(f"rund ids: {ids}")
+            print(f"run ids: {ids}")
 
             print(f"Checking workflow id: {workflow_id}")
             if len(ids) > 1:
