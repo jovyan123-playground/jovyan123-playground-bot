@@ -127,12 +127,12 @@ class Workflows:
                 workflow_types[workflow_run["workflow_id"]] = workflow_run["event"]
 
         for workflow_id in workflow_ids:
-            all_workflow_runs = self.get_workflow_runs(
+            workflow_runs = self.get_workflow_runs(
                 full_name, workflow_id, branch=branch, event=event_type,
             )
             run_ids = [
                 run["id"]
-                for run in all_workflow_runs["workflow_runs"]
+                for run in workflow_runs["workflow_runs"]
                 if run["status"] in status
             ]
             ids = list(sorted(run_ids))
