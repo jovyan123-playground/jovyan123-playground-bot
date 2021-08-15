@@ -112,7 +112,7 @@ class Workflows:
         a given "event_type".
         """
         print(
-            f'Cancelling dup "{event_type}" builds for "{full_name}" and branch "{branch}"'
+            f'Cancelling dup "{event_type}" builds for "{full_name}" and branch "{branch}"...'
         )
         workflow_ids = set()
         workflow_runs = self.get_repo_workflow_runs(
@@ -146,3 +146,5 @@ class Workflows:
                     print(f"Cancelling run id: {run_id}", result)
 
             print("\n")
+
+        print(f'Finished canceling duplicate "{event_type}" builds\n')

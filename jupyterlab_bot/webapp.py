@@ -80,7 +80,7 @@ class GithubHandler(tornado.web.RequestHandler):
 
         if branch:
             # Sleep for 15 seconds so builds have time to start
-            # Cancel duplicate builds
+            # Then cancel duplicate builds
             io_loop = tornado.ioloop.IOLoop.current()
             io_loop.call_later(15, wf.cancel_dup_builds, full_name, branch, event_type)
 
