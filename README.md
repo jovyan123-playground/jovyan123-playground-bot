@@ -61,13 +61,13 @@ heroku container:login
 If creating, run:
 
 ```bash
-heroku create jupyterlab-bot
+heroku create jovyan123-playground-bot
 ```
 
 Otherwise, run:
 
 ```bash
-heroku git:remote -a jupyterlab-bot
+heroku git:remote -a jovyan123-playground-bot
 ```
 
 Then run:
