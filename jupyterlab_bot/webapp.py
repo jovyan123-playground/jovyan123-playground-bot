@@ -2,7 +2,6 @@
 """JupyterLab Bot."""
 
 # Standard library imports
-from urllib.parse import parse_qs
 import json
 import os
 import re

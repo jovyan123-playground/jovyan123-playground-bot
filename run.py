@@ -6,7 +6,7 @@ Run JupyterLab Bot.
 
 # Local imports
 from jupyterlab_bot.webapp import main
-from jupyterlab_bot.config import PORT
+from jupyterlab_bot.config import PORT  # noqa
 
 
 if __name__ == "__main__":
