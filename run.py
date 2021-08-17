@@ -6,7 +6,7 @@ Run JupyterLab Bot.
 
 # Local imports
 from jupyterlab_bot.webapp import main
-from jupyterlab_bot.config import PORT  # pylint: disable-unused-import
+from jupyterlab_bot.config import PORT  # pylint: disable=unused-import
 
 
 if __name__ == "__main__":
