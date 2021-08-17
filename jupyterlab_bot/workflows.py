@@ -115,16 +115,14 @@ class Workflows:
             f'Cancelling dup "{event_type}" builds for "{full_name}" and branch "{branch}"...'
         )
         workflow_ids = set()
-        workflow_runs = self.get_repo_workflow_runs(
+        repo_workflow_runs = self.get_repo_workflow_runs(
             full_name, branch=branch, event=event_type,
         )["workflow_runs"]
-        workflow_types = dict()
 
         status = ["queued", "in_progress"]
-        for workflow_run in workflow_runs:
-            if workflow_run["status"] in status:
-                workflow_ids.add(workflow_run["workflow_id"])
-                workflow_types[workflow_run["workflow_id"]] = workflow_run["event"]
+        for repo_workflow_run in repo_workflow_runs:
+            if repo_workflow_run["status"] in status:
+                workflow_ids.add(repo_workflow_runs["workflow_id"])
 
         for workflow_id in workflow_ids:
             workflow_runs = self.get_workflow_runs(
